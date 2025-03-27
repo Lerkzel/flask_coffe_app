@@ -1,0 +1,10 @@
+flask_coffee_app/  
+app.py  
+database.py  
+visualization.py  
+requirements.txt  
+templates/  
+index.html  
+visualization.html  
+static/  
+styles.css
