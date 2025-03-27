@@ -28,3 +28,11 @@ def get_top_10_countries():
 
 # Запускаем создание базы
 create_database()
+
+def get_average_consumption():
+    conn = sqlite3.connect("coffee.db")
+    c = conn.cursor()
+    c.execute("SELECT AVG(consumption) FROM coffee_consumption")
+    avg_consumption = c.fetchone()[0]
+    conn.close()
+    return avg_consumption
