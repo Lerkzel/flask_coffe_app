@@ -15,3 +15,4 @@ def generate_plots():
     
     plt.savefig("static/coffee_plot.png")
     plt.close()
+    
