@@ -26,9 +26,6 @@ def get_top_10_countries():
     conn.close()
     return data
 
-# Запускаем создание базы
-create_database()
-
 def get_average_consumption():
     conn = sqlite3.connect("coffee.db")
     c = conn.cursor()
@@ -36,3 +33,11 @@ def get_average_consumption():
     avg_consumption = c.fetchone()[0]
     conn.close()
     return avg_consumption
+
+def get_filtered_countries(min_consumption):
+    conn = sqlite3.connect("coffee.db")
+    c = conn.cursor()
+    c.execute("SELECT * FROM coffee_consumption WHERE consumption >= ?", (min_consumption,))
+    data = c.fetchall()
+    conn.close()
+    return data
