@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>Vizualizācija</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Top 10 valstis pēc kafijas patēriņa</h1>
+    <img src="{{ url_for('static', filename='coffee_plot.png') }}" alt="Kafijas patēriņa grafiks">
+    <a href="/">Atpakaļ</a>
+</body>
+</html>
