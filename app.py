@@ -1,17 +1,18 @@
 from flask import Flask, render_template
-from database import get_top_10_countries
-from visualization import generate_plots
+from database import get_top_15_countries, get_average_consumption, get_filtered_countries
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+@app.route('/')
+def index():
+    top_countries = get_top_15_countries()
+    avg_consumption = get_average_consumption()
+    filtered_countries = get_filtered_countries(4)
+    
+    return render_template("index.html",
+                           top_countries=top_countries,
+                           avg_consumption=avg_consumption,
+                           filtered_countries=filtered_countries)
 
-@app.route("/visualization")
-def visualization():
-    generate_plots()
-    return render_template("visualization.html")
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
