@@ -14,5 +14,9 @@ def index():
                            avg_consumption=avg_consumption,
                            filtered_countries=filtered_countries)
 
+@app.route('/visualization')
+def visualization():
+    return render_template('visualization.html')
+    
 if __name__ == '__main__':
     app.run(debug=True)
