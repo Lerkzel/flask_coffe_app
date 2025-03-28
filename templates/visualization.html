@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>Kafijas Vizualizācija</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Kafijas patēriņa vizualizācija</h1>
+
+    <div class="container">
+        <h2>Top 15 valstis pēc kafijas patēriņa</h2>
+        <img src="{{ url_for('static', filename='top_countries.png') }}" alt="Kafijas patēriņa grafiks">
+    </div>
+
+    <div class="container">
+        <h2>Kafijas patēriņš pēc vecuma grupām</h2>
+        <img src="{{ url_for('static', filename='age_distribution.png') }}" alt="Vecuma grupu kafijas patēriņš">
+    </div>
+
+    <div class="container">
+        <h2>Kafijas veidu sadalījums</h2>
+        <img src="{{ url_for('static', filename='coffee_types.png') }}" alt="Kafijas veidu sektoru diagramma">
+    </div>
+
+    <a href="/">Atpakaļ</a>
+</body>
+</html>
